@@ -45,15 +45,18 @@ $csrf = csrf_get_token();
   <script src="tailwind.min.css"></script>
 </head>
 <body class="bg-gray-50 min-h-screen">
-  <nav class="bg-white shadow p-4 flex justify-between">
-    <div class="font-bold">GymMgmt</div>
-    <div class="space-x-3">
-      <a href="dashboard.php" class="px-3 py-1">Dashboard</a>
-      <a href="renew.php" class="px-3 py-1">Renew</a>
-      <a href="reports.php" class="px-3 py-1">Reports</a>
-      <a href="logout.php" class="px-3 py-1 text-red-600">Logout (<?php echo e($_SESSION['user']['username']); ?>)</a>
-    </div>
-  </nav>
+ <aside class="w-64 bg-white shadow-md min-h-screen p-4 flex flex-col">
+    <div class="text-2xl font-bold text-indigo-600 mb-6">AceFitness</div>
+    <nav class="flex-1 space-y-2">
+      <a href="dashboard.php" class="block p-2 rounded hover:bg-indigo-100 font-medium text-indigo-700">Dashboard</a>
+      <a href="members.php" class="block p-2 rounded hover:bg-indigo-100">Members</a>
+     <!-- <a href="renew.php" class="block p-2 rounded hover:bg-indigo-100">Renew</a>-->
+      <a href="reports.php" class="block p-2 rounded hover:bg-indigo-100">Reports</a>
+    </nav>
+    <a href="logout.php" class="mt-auto block p-2 rounded text-red-600 hover:bg-red-100">
+      Logout (<?php echo e($_SESSION['user']['username']); ?>)
+    </a>
+  </aside>
 
   <main class="p-6">
     <div class="flex justify-between items-center">
